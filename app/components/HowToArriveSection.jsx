@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Car, Train, Video, ArrowUpRight } from "lucide-react";
 
 const fadeUp = {
@@ -12,7 +13,20 @@ const fadeUp = {
   },
 };
 
+// Array de imágenes que rotarán
+const images = ["/images/howToArrive01.jpg", "/images/howToArrive02.jpg"];
+
 export default function HowToArriveSection() {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  // Efecto para cambiar la imagen cada 5 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="como-llegar"
@@ -50,37 +64,21 @@ export default function HowToArriveSection() {
         <div className="grid gap-8 lg:grid-cols-[1.05fr_1.2fr]">
           {/* Columna izquierda */}
           <motion.div variants={fadeUp} className="flex flex-col gap-6">
-            {/* Imagen / bloque visual */}
+            {/* Imagen con Slider Suave */}
             <div className="relative overflow-hidden rounded-[28px] border border-[#c9a961]/18 bg-[#0b0b0b] shadow-[0_18px_50px_rgba(0,0,0,0.4)]">
               <div className="relative h-[300px] md:h-[380px]">
-                <img
-                  src="/images/location-office.jpg"
-                  alt="Ubicación oficina"
-                  className="h-full w-full object-cover"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/88 via-[#050505]/35 to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,169,97,0.14),transparent_55%)]" />
-
-                <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-[#c9a961]/28 bg-black/35 px-4 py-2 backdrop-blur-md">
-                  <MapPin className="h-4 w-4 text-[#c9a961]" />
-                  <span className="text-sm font-medium text-[#f5efe4]">
-                    Nuestra oficina
-                  </span>
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <div className="max-w-md rounded-2xl border border-[#c9a961]/14 bg-[linear-gradient(180deg,rgba(8,8,8,0.82),rgba(8,8,8,0.94))] p-5 backdrop-blur-sm">
-                    <h3 className="text-2xl font-semibold leading-tight text-[#f5efe4]">
-                      Te esperamos en nuestra oficina
-                    </h3>
-                    <div className="mt-4 h-px w-full bg-gradient-to-r from-[#c9a961]/45 to-transparent" />
-                    <p className="mt-4 text-sm leading-6 text-[#d5d0c7]/78">
-                      Si prefieres una atención presencial, estaremos encantados
-                      de recibirte en nuestras oficinas.
-                    </p>
-                  </div>
-                </div>
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={images[currentImg]}
+                    src={images[currentImg]}
+                    alt="Ubicación oficina"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    className="absolute h-full w-full object-cover"
+                  />
+                </AnimatePresence>
               </div>
             </div>
 
@@ -179,7 +177,7 @@ export default function HowToArriveSection() {
                   </a>
 
                   <a
-                    href="https://maps.google.com/"
+                    href="https://maps.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-[#f5efe4] transition-all duration-300 hover:-translate-y-[1px] hover:border-[#c9a961]/28 hover:bg-white/[0.05]"

@@ -15,9 +15,9 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <PracticeAreasSection />
-      <ContactSection />
       <TeamSection />
       <HowToArriveSection />
+      <ContactSection />
       <Footer />
       <FloatingSocialBar />
     </div>

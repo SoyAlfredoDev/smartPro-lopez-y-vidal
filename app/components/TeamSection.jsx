@@ -6,28 +6,28 @@ const lawyers = [
   {
     name: "Diego Santander",
     role: "Abogado",
-    image: "/images/lawyer1.jpg",
+    image: "/images/abogado-01.png",
     description:
       "Abogado de la Pontificia Universidad Católica de Valparaíso, diplomado en derecho laboral de empresa, Universidad de los Andes.",
   },
   {
     name: "Gonzalo Oliva",
     role: "Abogado",
-    image: "/images/lawyer2.jpg",
+    image: "/images/abogado-02.png",
     description:
       "Especialista en litigación y asesoría jurídica, con experiencia en defensa de intereses corporativos y civiles.",
   },
   {
     name: "Francisca Oliva",
     role: "Abogada",
-    image: "/images/lawyer3.jpg",
+    image: "/images/abogado-03.jpg",
     description:
       "Abogada con enfoque en asesoría legal estratégica, contratos y representación en materias de alta complejidad.",
   },
   {
     name: "Miguel Oyarzún",
     role: "Abogado",
-    image: "/images/lawyer4.jpg",
+    image: "/images/abogado-04.png",
     description:
       "Magíster en derecho, con trayectoria en consultoría, defensa jurídica y resolución de controversias.",
   },
@@ -53,7 +53,10 @@ const fadeUp = {
 
 export default function TeamSection() {
   return (
-    <section className="relative overflow-hidden bg-[#070707] py-20 md:py-28 text-white">
+    <section
+      id="team"
+      className="relative overflow-hidden bg-[#070707] py-20 md:py-28 text-white"
+    >
       {/* Fondo */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,169,97,0.10),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(201,169,97,0.08),transparent_35%)]" />

@@ -49,7 +49,7 @@ const itemVariants = {
 
 export default function PracticeAreasSection() {
   return (
-    <section className="practice-section py-10 ">
+    <section id="especializacion" className="practice-section py-10 ">
       <div className="section-bg py-10">
         <div className="section-content mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}

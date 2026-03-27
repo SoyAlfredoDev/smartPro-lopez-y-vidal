@@ -29,7 +29,7 @@ const itemVariants = {
 
 export default function ContactSection() {
   return (
-    <section className="relative py-20 text-white">
+    <section id="contact" className="relative py-20 text-white">
       <div
         className="relative flex min-h-screen items-center py-14 sm:py-16 lg:py-20"
         style={{ backgroundImage: "url('/images/bg-practice.png')" }}

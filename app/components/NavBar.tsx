@@ -8,9 +8,10 @@ const navItems = [
   { label: "Inicio", href: "#inicio" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Especialización", href: "#especializacion" },
-  { label: "Abogados expertos", href: "#abogados-expertos" },
+  { label: "Abogados expertos", href: "#team" },
+  { label: "Cómo llegar", href: "#como-llegar" },
+  { label: "Contacto", href: "#contact" },
   { label: "Agendar una reunión", href: "#agendar-reunion", isButton: true },
-  { label: "Contacto", href: "#contacto" },
 ];
 
 export default function NavBar() {
