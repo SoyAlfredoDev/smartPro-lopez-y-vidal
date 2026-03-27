@@ -1,0 +1,64 @@
+.practice-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 56px 0;
+}
+
+@media (min-width: 640px) {
+  .practice-section {
+    padding: 72px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .practice-section {
+    padding: 88px 0;
+  }
+}
+
+.section-bg {
+  position: relative;
+  background-image: url("/images/bg-practice.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+/* Capa base oscura */
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  z-index: 1;
+}
+
+/* Fade arriba y abajo + leve brillo dorado al centro */
+.section-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      #0a0a0a 0%,
+      rgba(10, 10, 10, 0.55) 18%,
+      rgba(10, 10, 10, 0.18) 38%,
+      rgba(10, 10, 10, 0.18) 62%,
+      rgba(10, 10, 10, 0.55) 82%,
+      #0a0a0a 100%
+    ),
+    radial-gradient(
+      circle at top center,
+      rgba(198, 164, 108, 0.08),
+      transparent 35%
+    );
+  z-index: 2;
+}
+
+.section-content {
+  position: relative;
+  z-index: 3;
+}
