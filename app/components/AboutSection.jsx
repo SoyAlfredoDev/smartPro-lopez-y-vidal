@@ -16,16 +16,16 @@ export default function AboutSection() {
   return (
     <section
       id="nosotros"
-      className="relative bg-[#050505] text-white py-24 overflow-hidden"
+      className="relative overflow-hidden bg-[#141414] py-24 text-white"
     >
       {/* Fondo */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,169,97,0.08),transparent_40%)]" />
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,169,97,0.06),transparent_40%)]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10">
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         {/* TOP */}
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid items-center gap-14 lg:grid-cols-2">
           {/* TEXTO */}
           <motion.div
             variants={fadeUp}
@@ -34,19 +34,18 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
-            {/* título con línea */}
             <div className="flex items-center gap-4">
-              <h2 className="text-3xl md:text-4xl font-serif text-[#f5efe4]">
+              <h2 className="text-3xl font-serif text-[#f5efe4] md:text-4xl">
                 Nosotros
               </h2>
-              <div className="flex-1 h-px bg-gradient-to-r from-[#c9a961] to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-[#c9a961] to-transparent" />
             </div>
 
-            <h3 className="text-xl md:text-2xl text-[#d6cfc2] font-medium">
+            <h3 className="text-xl font-medium text-[#ddd5c9] md:text-2xl">
               Compromiso real con cada decisión legal
             </h3>
 
-            <p className="text-[#cfc7b8]/80 leading-7 text-sm md:text-base max-w-xl">
+            <p className="max-w-xl text-sm leading-7 text-[#cfc7b8]/82 md:text-base">
               En López & Vidal entendemos que cada decisión es parte de un
               proceso legal. Sabemos que impacta profundamente en la vida de
               nuestros clientes. Nuestra estrategia combina experiencia,
@@ -54,7 +53,7 @@ export default function AboutSection() {
               claras y seguras en cada etapa del proceso.
             </p>
 
-            <p className="text-[#cfc7b8]/80 leading-7 text-sm md:text-base max-w-xl">
+            <p className="max-w-xl text-sm leading-7 text-[#cfc7b8]/82 md:text-base">
               Nos involucramos con seriedad, trabajamos con precisión.
               Analizamos cada caso en detalle, anticipamos escenarios y
               construimos con convicción lo que realmente importa: tus derechos,
@@ -70,15 +69,14 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-[#c9a961]/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+            <div className="relative overflow-hidden rounded-2xl border border-[#c9a961]/18 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
               <img
                 src="/images/aboutUs.png"
                 alt="Equipo legal"
-                className="w-full h-[320px] md:h-[420px] object-cover scale-x-[-1]"
+                className="h-[320px] w-full object-cover brightness-105 saturate-90 md:h-[420px] scale-x-[-1]"
               />
 
-              {/* overlay elegante */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/58 via-[#141414]/14 to-transparent" />
             </div>
           </motion.div>
         </div>
@@ -88,7 +86,7 @@ export default function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 mt-20"
+          className="mt-20 grid gap-6 md:grid-cols-3"
         >
           {[
             {
@@ -111,18 +109,17 @@ export default function AboutSection() {
               key={i}
               variants={fadeUp}
               whileHover={{ y: -6 }}
-              className="relative p-6 rounded-2xl bg-[#0b0b0b] border border-[#c9a961]/15 shadow-[0_10px_40px_rgba(0,0,0,0.4)] group"
+              className="group relative rounded-2xl border border-[#c9a961]/14 bg-[#1a1a1a] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.28)]"
             >
-              {/* glow dorado */}
-              <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_top,rgba(201,169,97,0.12),transparent_60%)] opacity-0 group-hover:opacity-100 transition" />
+              <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_top,rgba(201,169,97,0.10),transparent_60%)] opacity-0 transition group-hover:opacity-100" />
 
-              <item.icon className="w-7 h-7 text-[#c9a961] mb-4" />
+              <item.icon className="mb-4 h-7 w-7 text-[#c9a961]" />
 
               <h4 className="text-lg font-semibold text-[#f5efe4]">
                 {item.title}
               </h4>
 
-              <p className="text-sm text-[#cfc7b8]/75 mt-2 leading-6">
+              <p className="mt-2 text-sm leading-6 text-[#cfc7b8]/78">
                 {item.desc}
               </p>
             </motion.div>

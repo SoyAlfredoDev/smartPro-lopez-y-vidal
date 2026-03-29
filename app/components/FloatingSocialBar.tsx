@@ -25,7 +25,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/estudiolyv/",
     icon: FaInstagram,
     isWhatsapp: false,
   },
@@ -37,13 +37,13 @@ const socialLinks = [
   },
   {
     name: "TikTok",
-    href: "https://tiktok.com/",
+    href: "https://www.tiktok.com/@estudio.lyv?is_from_webapp=1&sender_device=pc",
     icon: FaTiktok,
     isWhatsapp: false,
   },
   {
     name: "WhatsApp",
-    href: "https://wa.me/56949773707",
+    href: "https://wa.me/56927217616",
     icon: FaWhatsapp,
     isWhatsapp: true,
   },

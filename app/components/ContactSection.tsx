@@ -37,14 +37,14 @@ export default function ContactSection() {
         {/* Capa base de la imagen */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" />
 
-        {/* Oscurecimiento general */}
-        <div className="absolute inset-0 bg-black/60" />
+        {/* Oscurecimiento general más suave */}
+        <div className="absolute inset-0 bg-black/42" />
 
-        {/* Fade oscuro arriba y abajo */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0a0a_0%,rgba(10,10,10,0.55)_18%,rgba(10,10,10,0.18)_38%,rgba(10,10,10,0.18)_62%,rgba(10,10,10,0.55)_82%,#0a0a0a_100%)]" />
+        {/* Fade oscuro arriba y abajo más ligero */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#141414_0%,rgba(20,20,20,0.46)_18%,rgba(20,20,20,0.14)_38%,rgba(20,20,20,0.14)_62%,rgba(20,20,20,0.46)_82%,#141414_100%)]" />
 
         {/* Glow dorado sutil */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(198,164,108,0.08),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(198,164,108,0.06),transparent_30%)]" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -57,9 +57,9 @@ export default function ContactSection() {
             {/* Columna izquierda */}
             <motion.div
               variants={itemVariants}
-              className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md sm:p-8"
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-md sm:p-8"
             >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(198,164,108,0.10),transparent_35%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(198,164,108,0.08),transparent_35%)]" />
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
 
               <div className="relative">
@@ -71,7 +71,7 @@ export default function ContactSection() {
                   Contáctanos
                 </h2>
 
-                <p className="mt-4 max-w-md text-sm leading-6 text-white/65 sm:text-[15px] sm:leading-7">
+                <p className="mt-4 max-w-md text-sm leading-6 text-white/72 sm:text-[15px] sm:leading-7">
                   Estamos disponibles para orientarte con atención
                   personalizada, evaluación inicial y seguimiento profesional de
                   tu caso.
@@ -87,7 +87,7 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <p className="text-sm font-medium text-white/80">
+                      <p className="text-sm font-medium text-white/82">
                         Teléfono
                       </p>
                       <p className="mt-1 text-sm text-white sm:text-[15px]">
@@ -105,7 +105,7 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <p className="text-sm font-medium text-white/80">
+                      <p className="text-sm font-medium text-white/82">
                         Correo
                       </p>
                       <p className="mt-1 break-all text-sm text-white sm:text-[15px]">
@@ -123,7 +123,7 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <p className="text-sm font-medium text-white/80">
+                      <p className="text-sm font-medium text-white/82">
                         Ubicación
                       </p>
                       <p className="mt-1 text-sm leading-6 text-white sm:text-[15px]">
@@ -136,7 +136,7 @@ export default function ContactSection() {
 
                 <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-                <p className="mt-6 text-sm leading-6 text-white/55">
+                <p className="mt-6 text-sm leading-6 text-white/60">
                   Lunes a viernes de 9:00 a 19:00 hrs.
                 </p>
               </div>
@@ -145,66 +145,66 @@ export default function ContactSection() {
             {/* Formulario */}
             <motion.div
               variants={itemVariants}
-              className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md sm:p-8"
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-md sm:p-8"
             >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(198,164,108,0.08),transparent_35%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(198,164,108,0.06),transparent_35%)]" />
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
 
               <form className="relative">
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-white/85">
+                    <label className="mb-2 block text-sm font-medium text-white/88">
                       Nombre
                     </label>
                     <input
                       type="text"
                       placeholder="Nombre y apellido"
-                      className="h-11 w-full border-0 border-b border-white/15 bg-transparent px-0 text-sm text-white placeholder:text-white/35 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
+                      className="h-11 w-full border-0 border-b border-white/18 bg-transparent px-0 text-sm text-white placeholder:text-white/42 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
                     />
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-white/85">
+                    <label className="mb-2 block text-sm font-medium text-white/88">
                       Teléfono
                     </label>
                     <input
                       type="tel"
                       placeholder="Ej: +56 9 1234 5678"
-                      className="h-11 w-full border-0 border-b border-white/15 bg-transparent px-0 text-sm text-white placeholder:text-white/35 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
+                      className="h-11 w-full border-0 border-b border-white/18 bg-transparent px-0 text-sm text-white placeholder:text-white/42 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
                     />
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-white/85">
+                    <label className="mb-2 block text-sm font-medium text-white/88">
                       Email
                     </label>
                     <input
                       type="email"
                       placeholder="tu@email.com"
-                      className="h-11 w-full border-0 border-b border-white/15 bg-transparent px-0 text-sm text-white placeholder:text-white/35 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
+                      className="h-11 w-full border-0 border-b border-white/18 bg-transparent px-0 text-sm text-white placeholder:text-white/42 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
                     />
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-white/85">
+                    <label className="mb-2 block text-sm font-medium text-white/88">
                       Asunto
                     </label>
                     <input
                       type="text"
                       placeholder="Motivo de tu consulta"
-                      className="h-11 w-full border-0 border-b border-white/15 bg-transparent px-0 text-sm text-white placeholder:text-white/35 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
+                      className="h-11 w-full border-0 border-b border-white/18 bg-transparent px-0 text-sm text-white placeholder:text-white/42 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
                     />
                   </div>
                 </div>
 
                 <div className="mt-6">
-                  <label className="mb-2 block text-sm font-medium text-white/85">
+                  <label className="mb-2 block text-sm font-medium text-white/88">
                     Mensaje
                   </label>
                   <textarea
                     rows={4}
                     placeholder="Cuéntanos brevemente tu caso"
-                    className="w-full resize-none border-0 border-b border-white/15 bg-transparent px-0 py-3 text-sm text-white placeholder:text-white/35 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
+                    className="w-full resize-none border-0 border-b border-white/18 bg-transparent px-0 py-3 text-sm text-white placeholder:text-white/42 focus:border-[#c6a46c]/70 focus:outline-none focus:ring-0"
                   />
                 </div>
 
@@ -216,10 +216,11 @@ export default function ContactSection() {
                   />
                   <label
                     htmlFor="privacy"
-                    className="text-xs leading-5 text-white/55 sm:text-sm"
+                    className="text-xs leading-5 text-white/60 sm:text-sm"
                   >
-                    He leído y acepto el tratamiento de mis datos para ser
-                    contactado respecto a esta consulta.
+                    Acepto el tratamiento de mis datos personales conforme a la
+                    normativa vigente, para ser contactado(a) y recibir
+                    información sobre los servicios solicitados.
                   </label>
                 </div>
 

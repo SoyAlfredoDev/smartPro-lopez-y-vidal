@@ -31,7 +31,8 @@
     "**/*.mts",
     "app/components/TeamSection.jsx",
     "app/components/Footer.jsx",
-    "app/components/HowToArriveSection.jsx"
+    "app/components/HowToArriveSection.jsx",
+    "app/components/HeroSection.tsx"
   ],
   "exclude": ["node_modules"]
 }

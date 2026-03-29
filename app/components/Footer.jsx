@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -12,8 +14,32 @@ const fadeUp = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
+const navItems = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Nosotros", href: "#nosotros" },
+  { label: "Especialización", href: "#especializacion" },
+  { label: "Abogados expertos", href: "#team" },
+  { label: "Cómo llegar", href: "#como-llegar" },
+  { label: "Contacto", href: "#contact" },
+  { label: "Agendar una reunión", href: "#agendar-reunion", isButton: true },
+];
 
 export default function Footer() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
   return (
     <footer className="relative bg-[#050505] text-white overflow-hidden">
       {/* Fondo */}
@@ -55,14 +81,16 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3 mt-2">
             <a
-              href="#"
+              target="_blank"
+              href="https://www.waze.com/es-419/live-map/directions/cl/region-metropolitana/nunoa/av.-vicuna-mackenna-920?to=place.ChIJPRKVLXvFYpYRKa94T2R44SI"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 transition border border-white/10 text-sm"
             >
               📍 Llegar por Waze
             </a>
 
             <a
-              href="#"
+              target="_blank"
+              href="https://www.google.com/maps/place/Av.+Vicu%C3%B1a+Mackenna+920,+8330670+%C3%91u%C3%B1oa,+Regi%C3%B3n+Metropolitana,+Chile/@-33.4534987,-70.6327437,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c57b2d95123d:0x22e178644f78af29!8m2!3d-33.4535032!4d-70.6301634!16s%2Fg%2F11c4vqg9sz?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 transition border border-white/10 text-sm"
             >
               🗺️ Llegar por Maps
@@ -79,24 +107,14 @@ export default function Footer() {
           <div className="h-[1px] w-10 bg-[#c9a961]" />
 
           <ul className="flex flex-col gap-2 text-sm text-[#d5d0c7]/80 mt-2">
-            <li className="hover:text-[#c9a961] transition cursor-pointer">
-              Inicio
-            </li>
-            <li className="hover:text-[#c9a961] transition cursor-pointer">
-              Equipo de trabajo
-            </li>
-            <li className="hover:text-[#c9a961] transition cursor-pointer">
-              Áreas de trabajo
-            </li>
-            <li className="hover:text-[#c9a961] transition cursor-pointer">
-              Asesorías
-            </li>
-            <li className="hover:text-[#c9a961] transition cursor-pointer">
-              Contacto
-            </li>
-            <li className="hover:text-[#c9a961] transition cursor-pointer">
-              Cómo llegar
-            </li>
+            {navItems.map((item) => (
+              <li
+                key={item.label}
+                className="hover:text-[#c9a961] transition cursor-pointer"
+              >
+                <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
           </ul>
         </motion.div>
 
@@ -114,7 +132,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-[#c9a961]" />
-              <span>+56 2 6469 13 52</span>
+              <span>+56 9 2721 76 16</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -140,6 +158,12 @@ export default function Footer() {
         <span className="text-[#c9a961] font-medium">
           Formas de pago disponibles
         </span>
+        <Image
+          src="/images/webpay-2048x979.png"
+          alt="Formas de pago"
+          width={200}
+          height={200}
+        />
       </div>
     </footer>
   );
