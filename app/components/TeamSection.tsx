@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, type Variants } from "framer-motion";
 
 const lawyers = [
   {
@@ -55,7 +56,7 @@ const sectionVariants = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
@@ -65,13 +66,18 @@ const fadeUp = {
 };
 
 export default function TeamSection() {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  const handleToggleCard = (index: number) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
+
   return (
     <section
       id="team"
       className="relative min-h-screen overflow-hidden bg-[#141414] py-20 text-white md:py-28"
     >
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
-        {/* 🔥 BLOQUE AGREGADO (título + descripción) */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -95,59 +101,75 @@ export default function TeamSection() {
           </p>
         </motion.div>
 
-        {/* Grid abogados */}
         <motion.div
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4"
         >
-          {lawyers.map((lawyer) => (
-            <motion.article
-              key={lawyer.name}
-              variants={fadeUp}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-[22px] border border-[#c9a961]/16 bg-[#1a1a1a] shadow-[0_14px_40px_rgba(0,0,0,0.24)]"
-            >
-              <div className="relative min-h-[500px] overflow-hidden">
-                {/* IMAGEN */}
-                <motion.img
-                  src={lawyer.image}
-                  alt={lawyer.name}
-                  className="min-h-[500px] w-full object-cover brightness-105 saturate-90 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-                />
+          {lawyers.map((lawyer, index) => {
+            const isActive = activeCard === index;
 
-                {/* Overlay base */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/78 via-[#141414]/28 to-transparent" />
+            return (
+              <motion.article
+                key={lawyer.name}
+                variants={fadeUp}
+                whileHover={{ y: -6 }}
+                onClick={() => handleToggleCard(index)}
+                className="group relative cursor-pointer overflow-hidden rounded-[22px] border border-[#c9a961]/16 bg-[#1a1a1a] shadow-[0_14px_40px_rgba(0,0,0,0.24)]"
+              >
+                <div className="relative min-h-[500px] overflow-hidden">
+                  <motion.img
+                    src={lawyer.image}
+                    alt={lawyer.name}
+                    className={`min-h-[500px] w-full object-cover brightness-105 saturate-90 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06] ${
+                      isActive ? "scale-[1.06]" : ""
+                    }`}
+                  />
 
-                {/* Info base */}
-                <div className="absolute inset-x-0 bottom-0 p-5 transition-opacity duration-300 group-hover:opacity-0">
-                  <h3 className="text-lg font-semibold text-[#f5efe4]">
-                    {lawyer.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-[#c9a961]">{lawyer.role}</p>
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/78 via-[#141414]/28 to-transparent" />
 
-                {/* Hover info */}
-                <div className="absolute inset-0 flex items-end bg-[linear-gradient(to_top,rgba(20,20,20,0.94),rgba(20,20,20,0.72),rgba(20,20,20,0.18))] p-5 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                  <div className="translate-y-4 transition-all duration-300 group-hover:translate-y-0">
-                    <h3 className="text-xl font-semibold text-[#f5efe4]">
+                  <div
+                    className={`absolute inset-x-0 bottom-0 p-5 transition-opacity duration-300 group-hover:opacity-0 ${
+                      isActive ? "opacity-0" : "opacity-100"
+                    }`}
+                  >
+                    <h3 className="text-lg font-semibold text-[#f5efe4]">
                       {lawyer.name}
                     </h3>
                     <p className="mt-1 text-sm text-[#c9a961]">{lawyer.role}</p>
+                  </div>
 
-                    <div className="my-3 h-px w-14 bg-[#c9a961]" />
+                  <div
+                    className={`absolute inset-0 flex items-end bg-[linear-gradient(to_top,rgba(20,20,20,0.94),rgba(20,20,20,0.72),rgba(20,20,20,0.18))] p-5 transition-all duration-300 group-hover:opacity-100 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <div
+                      className={`transition-all duration-300 group-hover:translate-y-0 ${
+                        isActive ? "translate-y-0" : "translate-y-4"
+                      }`}
+                    >
+                      <h3 className="text-xl font-semibold text-[#f5efe4]">
+                        {lawyer.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-[#c9a961]">
+                        {lawyer.role}
+                      </p>
 
-                    <ul className="space-y-2 text-sm text-[#ece6da]/90">
-                      {lawyer.descriptionLines.map((line) => (
-                        <li key={line}>{line}</li>
-                      ))}
-                    </ul>
+                      <div className="my-3 h-px w-14 bg-[#c9a961]" />
+
+                      <ul className="space-y-2 text-sm text-[#ece6da]/90">
+                        {lawyer.descriptionLines.map((line) => (
+                          <li key={line}>{line}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            );
+          })}
         </motion.div>
       </div>
     </section>
