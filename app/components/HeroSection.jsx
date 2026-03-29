@@ -1,10 +1,13 @@
 "use client";
-import Image from "next/image";
-import { Briefcase, Scale, Globe, Calendar, FileText } from "lucide-react";
 
-import { PopupModal } from "react-calendly";
-import { useState } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
+import { Briefcase, Scale, Globe, FileText } from "lucide-react";
+
+const CalendlyButton = dynamic(() => import("./CalendlyButton"), {
+  ssr: false,
+});
 
 const cards = [
   {
@@ -25,9 +28,6 @@ const cards = [
 ];
 
 export default function HeroSection() {
-  const [isOpen, setIsOpen] = useState(false);
-  const document = typeof window !== "undefined" ? window.document : null;
-
   return (
     <section
       id="inicio"
@@ -71,21 +71,7 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={() => setIsOpen(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#d2b07a]/30 bg-[linear-gradient(135deg,#d1b07a,#a88652)] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_40px_rgba(198,164,108,0.18)] transition duration-300 hover:scale-[1.02] hover:shadow-[0_16px_50px_rgba(198,164,108,0.24)]"
-            >
-              <Calendar className="h-4 w-4" />
-              Agendar videollamada
-            </button>
-
-            <PopupModal
-              url="https://calendly.com/tu-usuario/30min"
-              open={isOpen}
-              onModalClose={() => setIsOpen(false)}
-              rootElement={document.body}
-            />
+            <CalendlyButton />
 
             <Link
               href="#contact"
