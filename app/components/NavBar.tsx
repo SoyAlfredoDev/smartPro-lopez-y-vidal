@@ -54,7 +54,7 @@ export default function NavBar() {
             <img
               src="/images/logo-lopez-vidal2.png"
               alt="Logo"
-              className="w-24"
+              className="w-32 m-0 p-0"
             />
           </a>
 
@@ -117,7 +117,7 @@ export default function NavBar() {
               <div className="flex items-center justify-between border-b border-white/5 px-5 py-5">
                 <div className="flex flex-col leading-none">
                   <span className="font-serif text-[24px] text-[#f5efe4]">
-                    López <span className="text-[#c9a961]">&</span> Vidal
+                    López <span className="text-[#b42a1e]">&</span> Vidal
                   </span>
                   <span className="mt-2 h-px w-14 bg-gradient-to-r from-[#c9a961] to-transparent" />
                 </div>

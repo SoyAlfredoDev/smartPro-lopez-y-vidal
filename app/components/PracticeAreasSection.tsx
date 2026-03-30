@@ -15,12 +15,10 @@ import {
 const practiceAreas = [
   { title: "Derecho Civil", icon: Scale },
   { title: "Derecho Penal", icon: Scale },
-  { title: "Derecho Familiar", icon: Users },
+  { title: "Derecho Familia", icon: Users },
   { title: "Derecho Laboral", icon: Briefcase },
-  { title: "Derecho Comercial", icon: BadgeDollarSign },
-  { title: "Derecho Contractual", icon: FileText },
-  { title: "Derecho Corporativo", icon: Building2 },
-  { title: "Derecho Inmobiliario", icon: Landmark },
+  { title: "Derecho de Empresas", icon: Building2 },
+  { title: "Derecho Regulatorio", icon: BadgeDollarSign },
 ];
 
 const containerVariants = {
@@ -82,7 +80,7 @@ export default function PracticeAreasSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
-            className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4"
+            className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
           >
             {practiceAreas.map((area) => {
               const Icon = area.icon;

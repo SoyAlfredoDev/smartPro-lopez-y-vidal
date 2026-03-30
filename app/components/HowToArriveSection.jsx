@@ -1,8 +1,11 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Car, Train, Video, ArrowUpRight } from "lucide-react";
+const CalendlyButton = dynamic(() => import("./CalendlyButton"), {
+  ssr: false,
+});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -99,19 +102,13 @@ export default function HowToArriveSection() {
                   <h3 className="text-xl font-semibold text-[#f5efe4]">
                     ¿Quieres agendar una videollamada?
                   </h3>
-                  <p className="mt-2 max-w-lg text-sm leading-6 text-[#d5d0c7]/78">
+                  <p className="mt-2 max-w-lg text-sm leading-6 text-[#d5d0c7]/78 mb-4">
                     Si te acomoda más una reunión remota, también podemos
                     coordinar una videollamada para orientarte y revisar tu
                     caso.
                   </p>
 
-                  <a
-                    href="#agendar-reunion"
-                    className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#c9a961]/35 bg-[linear-gradient(180deg,rgba(201,169,97,0.18),rgba(201,169,97,0.08))] px-5 py-3 text-sm font-medium text-[#f5efe4] transition-all duration-300 hover:-translate-y-[1px] hover:border-[#e6d19a]/55 hover:bg-[linear-gradient(180deg,rgba(201,169,97,0.24),rgba(201,169,97,0.12))] hover:shadow-[0_10px_30px_rgba(201,169,97,0.12)]"
-                  >
-                    Agendar videollamada
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
+                  <CalendlyButton />
                 </div>
               </div>
             </motion.div>
@@ -167,7 +164,7 @@ export default function HowToArriveSection() {
 
                 <div className="mt-6 flex flex-col gap-3">
                   <a
-                    href="https://waze.com/"
+                    href="https://www.waze.com/es-419/live-map/directions/cl/region-metropolitana/providencia/av.-providencia-1017?to=place.ChIJG-0f4YfFYpYRAOa9KqXKYdA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c9a961]/32 bg-[linear-gradient(180deg,rgba(201,169,97,0.18),rgba(201,169,97,0.08))] px-5 py-3 text-sm font-medium text-[#f5efe4] transition-all duration-300 hover:-translate-y-[1px] hover:border-[#e6d19a]/55 hover:bg-[linear-gradient(180deg,rgba(201,169,97,0.24),rgba(201,169,97,0.12))] hover:shadow-[0_10px_28px_rgba(201,169,97,0.10)]"
@@ -177,7 +174,7 @@ export default function HowToArriveSection() {
                   </a>
 
                   <a
-                    href="https://maps.google.com"
+                    href="https://www.google.com/maps/place/Av.+Providencia+1017,+7500620+Providencia,+Regi%C3%B3n+Metropolitana,+Chile/@-33.4308855,-70.6255499,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c587e11fed1b:0xd061caa52abde600!8m2!3d-33.4308855!4d-70.622975!16s%2Fg%2F11c5l340wy?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-[#f5efe4] transition-all duration-300 hover:-translate-y-[1px] hover:border-[#c9a961]/28 hover:bg-white/[0.05]"

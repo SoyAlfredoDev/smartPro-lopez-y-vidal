@@ -56,8 +56,8 @@ export default function HeroSection() {
           </div>
 
           <h1 className="mt-6 max-w-2xl text-4xl font-medium leading-tight tracking-[-0.02em] text-white sm:text-5xl lg:text-5xl">
-            Defensa Legal Estratégica: Tu Respaldo Jurídico Especializado en
-            Chile
+            Defensa Legal Especializada: La protección de tus derechos en manos
+            de los mejores profesionales
           </h1>
 
           <p className="mt-3 text-lg text-[#d6b27a] sm:text-xl">
@@ -66,8 +66,7 @@ export default function HeroSection() {
 
           <p className="mt-6 max-w-2xl text-sm leading-7 text-white/78 sm:text-base">
             Más de 10 años de experiencia entregando soluciones legales
-            efectivas en Chile, con un enfoque serio, cercano y orientado a
-            resultados.
+            efectivas, con un enfoque serio, cercano y orientado a resultados.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -25,7 +25,7 @@ export default function CalendlyButton() {
 
       {rootElement && (
         <PopupModal
-          url="https://calendly.com/tu-usuario/30min"
+          url="https://calendly.com/estudiojuridicolyv/online"
           open={isOpen}
           onModalClose={() => setIsOpen(false)}
           rootElement={rootElement}

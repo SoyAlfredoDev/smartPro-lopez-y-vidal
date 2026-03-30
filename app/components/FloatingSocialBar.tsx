@@ -19,7 +19,7 @@ import {
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://facebook.com/",
+    href: "https://www.facebook.com/profile.php?id=61561918072674",
     icon: FaFacebookF,
     isWhatsapp: false,
   },
@@ -31,14 +31,8 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/",
+    href: "https://www.linkedin.com/company/estudio-lyv/",
     icon: FaLinkedinIn,
-    isWhatsapp: false,
-  },
-  {
-    name: "TikTok",
-    href: "https://www.tiktok.com/@estudio.lyv?is_from_webapp=1&sender_device=pc",
-    icon: FaTiktok,
     isWhatsapp: false,
   },
   {

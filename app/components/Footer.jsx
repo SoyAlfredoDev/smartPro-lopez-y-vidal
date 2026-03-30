@@ -14,6 +14,7 @@ const fadeUp = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
+
 const navItems = [
   { label: "Inicio", href: "#inicio" },
   { label: "Nosotros", href: "#nosotros" },
@@ -52,15 +53,15 @@ export default function Footer() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative max-w-7xl mx-auto px-6 md:px-10 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4"
+        className="relative max-w-7xl mx-auto px-6 md:px-10 py-8 grid gap-12 md:grid-cols-2 lg:grid-cols-4"
       >
         {/* LOGO + TEXTO */}
         <motion.div variants={fadeUp} className="flex flex-col gap-5">
           <Image
             src="/images/logo-lopez-vidal2.png"
             alt="Logo"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
           />
 
           <div className="h-[2px] w-16 bg-gradient-to-r from-[#c9a961] to-transparent" />
@@ -127,18 +128,31 @@ export default function Footer() {
           <div className="flex flex-col gap-4 mt-2 text-sm text-[#d5d0c7]/85">
             <div className="flex items-start gap-3">
               <MapPin className="w-4 h-4 text-[#c9a961] mt-1" />
-              <span>Avenida Vicuña Mackenna 920, Ñuñoa</span>
+              <span>
+                Providencia 1017 OF 41, Comuna Providencia, Codigo postal
+                7500000
+              </span>
             </div>
 
             <div className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-[#c9a961]" />
-              <span>+56 9 2721 76 16</span>
+              <span>+56 9 2721 7616</span>
             </div>
 
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-[#c9a961]" />
               <span>info@estudiolyv.cl</span>
             </div>
+            <h3 className="text-lg font-semibold text-[#f5efe4]m mb-0 pb-0">
+              Formas de pago disponibles
+            </h3>
+            <Image
+              src="/images/webpay-2048x979.png"
+              alt="Formas de pago"
+              width={150}
+              height={150}
+              className="m-0 p-0 mx-auto"
+            />
           </div>
         </motion.div>
       </motion.div>
@@ -151,19 +165,26 @@ export default function Footer() {
       {/* Bottom */}
       <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#a8a29e]">
         <span>
-          © {new Date().getFullYear()} López & Vidal. Todos los derechos
-          reservados.
+          Estudio Jurídico Vidal y López Limitada, RUT 77.938.388-5 / ©{" "}
+          {new Date().getFullYear()} Todos los derechos reservados
         </span>
-
-        <span className="text-[#c9a961] font-medium">
-          Formas de pago disponibles
-        </span>
-        <Image
-          src="/images/webpay-2048x979.png"
-          alt="Formas de pago"
-          width={200}
-          height={200}
-        />
+        <div className="flex items-center justify-center gap-2">
+          <span>creado por:</span>
+          <a
+            href="https://smartpro.cl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center transition-opacity hover:opacity-80"
+          >
+            <Image
+              src="/images/logo-smartpro.png"
+              alt="SmartPro — Desarrollo web profesional"
+              width={50}
+              height={30}
+              className="w-auto object-contain bg-white rounded-lg p-2"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );

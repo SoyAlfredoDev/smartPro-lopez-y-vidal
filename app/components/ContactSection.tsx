@@ -91,7 +91,7 @@ export default function ContactSection() {
                         Teléfono
                       </p>
                       <p className="mt-1 text-sm text-white sm:text-[15px]">
-                        +56 2 1799 267 211
+                        +56 9 2721 7616
                       </p>
                     </div>
                   </motion.div>
@@ -109,7 +109,7 @@ export default function ContactSection() {
                         Correo
                       </p>
                       <p className="mt-1 break-all text-sm text-white sm:text-[15px]">
-                        abogados@bufete.com
+                        info@estudiolyv.cl
                       </p>
                     </div>
                   </motion.div>
@@ -127,8 +127,8 @@ export default function ContactSection() {
                         Ubicación
                       </p>
                       <p className="mt-1 text-sm leading-6 text-white sm:text-[15px]">
-                        Av. Apoquindo N° 491, Región Metropolitana, Las Condes,
-                        Chile.
+                        Providencia 1017 OF 41, Comuna Providencia, Codigo
+                        postal 7500000
                       </p>
                     </div>
                   </motion.div>

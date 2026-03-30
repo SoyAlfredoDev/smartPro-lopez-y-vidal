@@ -46,18 +46,16 @@ export default function AboutSection() {
             </h3>
 
             <p className="max-w-xl text-sm leading-7 text-[#cfc7b8]/82 md:text-base">
-              En López & Vidal entendemos que cada decisión es parte de un
-              proceso legal. Sabemos que impacta profundamente en la vida de
-              nuestros clientes. Nuestra estrategia combina experiencia,
-              análisis y visión jurídica para ofrecer soluciones efectivas,
-              claras y seguras en cada etapa del proceso.
+              Porque en López & Vidal entendemos lo importante que son para ti
+              la protección de tus asuntos más importantes nos comprometemos a
+              entregarte una defensa personalizada, integral y
+              multidisciplinaria en la solución de tus problemas legales.
             </p>
 
             <p className="max-w-xl text-sm leading-7 text-[#cfc7b8]/82 md:text-base">
-              Nos involucramos con seriedad, trabajamos con precisión.
-              Analizamos cada caso en detalle, anticipamos escenarios y
-              construimos con convicción lo que realmente importa: tus derechos,
-              tu tranquilidad y tu futuro.
+              Nos involucramos con profundidad en tus asuntos y estamos siempre
+              disponibles para trabajar en conjunto, buscando que te sientas
+              protegido en todo momento.
             </p>
           </motion.div>
 
